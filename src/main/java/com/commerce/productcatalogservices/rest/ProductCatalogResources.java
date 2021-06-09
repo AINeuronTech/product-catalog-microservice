@@ -5,6 +5,7 @@ import com.commerce.productcatalogservices.model.ProductCatalog;
 import com.commerce.productcatalogservices.model.UserReview;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,8 +29,8 @@ public class ProductCatalogResources {
         UserReview userRating = restTemplate.getForObject("http://product-review-service/reviews-data/user/"+userId, UserReview.class);
 
         return userRating.getRatings().stream().map(rating -> {
-            Product product = restTemplate.getForObject("http://product-info-services/products/"+ rating.getProductId(),Product.class);
-            return new ProductCatalog(product.getName(), product.getDescription(), rating.getRating());
+            Product product = restTemplate.getForObject("http://product-info-services/products/getProduct"+ rating.getProductId(),Product.class);
+            return new ProductCatalog(product.getProdName(), product.getProdPrice(), rating.getRating());
         }).collect(Collectors.toList());
 
     }

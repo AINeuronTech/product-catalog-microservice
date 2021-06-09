@@ -2,52 +2,40 @@ package com.commerce.productcatalogservices.model;
 
 public class Product {
 
-    public String productId;
-    public String name;
-    public int price;
-    public String description;
+    int prodId;
+    String prodName;
+    String prodPrice;
 
-    public Product(){}
-    public Product(String productId, String name, int price) {
-        this.productId = productId;
-        this.name = name;
-        this.price = price;
-    }
-    public Product(String productId, String name, int price, String description) {
-        this.productId = productId;
-        this.name = name;
-        this.price = price;
-        this.description = description;
+    public Product() {
     }
 
-    public String getProductId() {
-        return productId;
+    public Product(int prodId, String prodName, String prodPrice) {
+        this.prodId = prodId;
+        this.prodName = prodName;
+        this.prodPrice = prodPrice;
     }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
+    public int getProdId() {
+        return prodId;
     }
 
-    public String getName() {
-        return name;
+    public void setProdId(int prodId) {
+        this.prodId = prodId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getProdName() {
+        return prodName;
     }
 
-    public int getPrice() {
-        return price;
+    public void setProdName(String prodName) {
+        this.prodName = prodName;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
-    public String getDescription() {
-        return description;
+    public String getProdPrice() {
+        return prodPrice;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setProdPrice(String prodPrice) {
+        this.prodPrice = prodPrice;
     }
 }
