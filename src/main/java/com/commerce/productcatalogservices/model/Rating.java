@@ -1,28 +1,20 @@
 package com.commerce.productcatalogservices.model;
 
+
+import lombok.*;
+
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Rating {
 
-    public String productId;
-    public int rating;
+    public int id;
+    public String rating;
 
-    public Rating(){}
-    public Rating(String productId, int rating) {
-        this.productId = productId;
+    public Rating(String rating){
         this.rating = rating;
     }
-    public String getProductId() {
-        return productId;
-    }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
-    }
-
-    public int getRating() {
-        return rating;
-    }
-
-    public void setRating(int rating) {
-        this.rating = rating;
-    }
 }

@@ -1,38 +1,24 @@
 package com.commerce.productcatalogservices.model;
 
+import lombok.*;
+
+import java.util.List;
+
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class ProductCatalog {
+
+    public int id;
     public String name;
-    public String description;
-    public int rating;
+    public String price;
+    public String rating;
+    public String message;
 
-    public ProductCatalog(String name, String description, int rating) {
-        this.name = name;
-        this.description = description;
-        this.rating = rating;
+    public ProductCatalog(String message){
+        this.message = message;
     }
 
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getRating() {
-        return rating;
-    }
-
-    public void setRating(int rating) {
-        this.rating = rating;
-    }
 }
